@@ -3,10 +3,14 @@ import React, { useState } from "react";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
+interface Extracted{
+    name:"",
+    documentNumber:"",
+    expirationDate:"",
+}
 const ExtractPdf = () => {
   const [file, setFile] = useState<File | null>(null);
-  const [extractedData, setExtractedData] = useState<any>(null);
+  const [extractedData, setExtractedData] = useState<Extracted>();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
